@@ -1,0 +1,10 @@
+C:\Users\santi\source\repos\TRESCAPAS.4.7\Modelos\bin\Debug\Modelos.dll
+C:\Users\santi\source\repos\TRESCAPAS.4.7\Modelos\bin\Debug\Modelos.pdb
+C:\Users\santi\source\repos\TRESCAPAS.4.7\Modelos\bin\Debug\Modelos.xml
+C:\Users\santi\source\repos\TRESCAPAS.4.7\Modelos\obj\Debug\Modelos.vbprojAssemblyReference.cache
+C:\Users\santi\source\repos\TRESCAPAS.4.7\Modelos\obj\Debug\Modelos.Resources.resources
+C:\Users\santi\source\repos\TRESCAPAS.4.7\Modelos\obj\Debug\Modelos.vbproj.GenerateResource.cache
+C:\Users\santi\source\repos\TRESCAPAS.4.7\Modelos\obj\Debug\Modelos.vbproj.CoreCompileInputs.cache
+C:\Users\santi\source\repos\TRESCAPAS.4.7\Modelos\obj\Debug\Modelos.dll
+C:\Users\santi\source\repos\TRESCAPAS.4.7\Modelos\obj\Debug\Modelos.xml
+C:\Users\santi\source\repos\TRESCAPAS.4.7\Modelos\obj\Debug\Modelos.pdb

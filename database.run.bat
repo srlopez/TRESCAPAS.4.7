@@ -1,0 +1,1 @@
+type database.create.sql | sqlite3 database.sq3

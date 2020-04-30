@@ -1,0 +1,12 @@
+C:\Users\santi\source\repos\SOLUCIONWF\Access.WinForm\bin\Release\Access.WinForm.exe.config
+C:\Users\santi\source\repos\SOLUCIONWF\Access.WinForm\bin\Release\Access.WinForm.exe
+C:\Users\santi\source\repos\SOLUCIONWF\Access.WinForm\bin\Release\Access.WinForm.pdb
+C:\Users\santi\source\repos\SOLUCIONWF\Access.WinForm\bin\Release\Access.WinForm.xml
+C:\Users\santi\source\repos\SOLUCIONWF\Access.WinForm\obj\Release\Access.WinForm.vbprojAssemblyReference.cache
+C:\Users\santi\source\repos\SOLUCIONWF\Access.WinForm\obj\Release\Access.WinForm.FormUsuarios.resources
+C:\Users\santi\source\repos\SOLUCIONWF\Access.WinForm\obj\Release\Access.WinForm.Resources.resources
+C:\Users\santi\source\repos\SOLUCIONWF\Access.WinForm\obj\Release\Access.WinForm.vbproj.GenerateResource.cache
+C:\Users\santi\source\repos\SOLUCIONWF\Access.WinForm\obj\Release\Access.WinForm.vbproj.CoreCompileInputs.cache
+C:\Users\santi\source\repos\SOLUCIONWF\Access.WinForm\obj\Release\Access.WinForm.exe
+C:\Users\santi\source\repos\SOLUCIONWF\Access.WinForm\obj\Release\Access.WinForm.xml
+C:\Users\santi\source\repos\SOLUCIONWF\Access.WinForm\obj\Release\Access.WinForm.pdb
