@@ -1,9 +1,10 @@
 ﻿Imports System.Data
 Imports Microsoft.Data.Sqlite
+Imports System.Data.SqlClient
 Imports System.Data.OleDb
 
-#Const DATABASE = "SQLite"
-'#Const DATABASE = "SQLServer"
+'#Const DATABASE = "SQLite"
+#Const DATABASE = "SQLServer"
 '#Const DATABASE = "MSAccess"
 
 Namespace DAM
@@ -11,17 +12,20 @@ Namespace DAM
 #If DATABASE = "SQLite" Then
         Public Function getConnection() As SqliteConnection
             'Console.WriteLine(Directory.GetCurrentDirectory())
-
             Dim connString = "Data Source=..\..\..\database.sq3"
             getConnection = New SqliteConnection(connString)
             'Console.WriteLine("State: {0}", getConnection.State)
             'Console.WriteLine("ServerVersion: {0}", getConnection.ServerVersion)
-
         End Function
 #ElseIf DATABASE = "MSAccess" Then
         Public Function getConnection() As OleDbConnection
             Dim connString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\..\database.accdb;Persist Security Info=False"
             getConnection = New OleDbConnection(connString)
+        End Function
+#ElseIf DATABASE = "SQLServer" Then
+        Public Function getConnection() As SqlConnection
+            Dim connString = "Data Source=slimbook;Initial Catalog=BASE;User ID=sa;Password=Pa88word"
+            getConnection = New SqlConnection(connString)
         End Function
 #End If
 
@@ -35,8 +39,9 @@ Namespace DAM
 #If DATABASE = "SQLite" Then
             Dim sqlCommand = New SqliteCommand(query, conn)
 #ElseIf DATABASE = "MSAccess" Then
-
             Dim sqlCommand = New OleDbCommand(query, conn)
+#ElseIf DATABASE = "SQLServer" Then
+            Dim sqlCommand = New SqlCommand(query, conn)
 #End If
             Dim table = New DataTable()
             Dim executeReader = sqlCommand.ExecuteReader()
@@ -54,8 +59,9 @@ Namespace DAM
 #If DATABASE = "SQLite" Then
             Dim sqlCommand = New SqliteCommand(query, conn)
 #ElseIf DATABASE = "MSAccess" Then
-
             Dim sqlCommand = New OleDbCommand(query, conn)
+#ElseIf DATABASE = "SQLServer" Then
+            Dim sqlCommand = New SqlCommand(query, conn)
 #End If
             sqlCommand.Parameters.AddWithValue("@nombre", filtro + "%")
             sqlCommand.Parameters.AddWithValue("@email", "%" + filtro + "%")
@@ -75,8 +81,9 @@ Namespace DAM
 #If DATABASE = "SQLite" Then
             Dim sqlCommand = New SqliteCommand(query, conn)
 #ElseIf DATABASE = "MSAccess" Then
-
             Dim sqlCommand = New OleDbCommand(query, conn)
+#ElseIf DATABASE = "SQLServer" Then
+            Dim sqlCommand = New SqlCommand(query, conn)
 #End If
             sqlCommand.Parameters.AddWithValue("@id", id)
             Dim table = New DataTable()
@@ -114,7 +121,6 @@ Namespace DAM
             Return id
         End Function
 #ElseIf DATABASE = "MSAccess" Then
-
         Public Function CmdInsert(u As Modelos.Usuario) As Integer
             Dim id = -1
             Dim conn = DB.getConnection()
@@ -139,9 +145,32 @@ Namespace DAM
             End Try
             Return id
         End Function
-
+#ElseIf DATABASE = "SQLServer" Then
+        Public Function CmdInsert(u As Modelos.Usuario) As Integer
+            Dim id = -1
+            Dim conn = DB.getConnection()
+            conn.Open()
+            'Try
+            Dim cmd = conn.CreateCommand
+            cmd.CommandText = "INSERT INTO USUARIOS 
+                 (NOMBRE, EMAIL, NOTAS, FNAC, MAP) VALUES 
+                 (@nombre, @email, @notas, @fnac, @map);
+                 SELECT IDENT_CURRENT('USUARIOS')"
+            cmd.Parameters.AddWithValue("@nombre", u.nombre)
+            cmd.Parameters.AddWithValue("@email", u.email)
+            cmd.Parameters.AddWithValue("@notas", u.notas)
+            cmd.Parameters.AddWithValue("@fnac", u.fnac)
+            cmd.Parameters.AddWithValue("@map", u.map)
+            'cmd.ExecuteNonQuery()
+            id = cmd.ExecuteScalar()
+            'Catch ex As Exception
+            'Console.WriteLine(ex.Message)
+            'Finally
+            If conn.State = ConnectionState.Open Then conn.Close()
+            ' End Try
+            Return id
+        End Function
 #End If
-
         Public Function CmdUpdate(u As Modelos.Usuario) As Integer
             Dim ret As Integer = -1
             Dim conn = DB.getConnection()
@@ -158,7 +187,11 @@ Namespace DAM
                 cmd.Parameters.AddWithValue("@nombre", u.nombre)
                 cmd.Parameters.AddWithValue("@email", u.email)
                 cmd.Parameters.AddWithValue("@notas", u.notas)
+#If DATABASE = "SQLServer" Then
+                cmd.Parameters.AddWithValue("@fnac", u.fnac)
+#Else
                 cmd.Parameters.AddWithValue("@fnac", Format(u.fnac, "ddMMyyyy"))
+#End If
                 cmd.Parameters.AddWithValue("@map", u.map)
                 cmd.Parameters.AddWithValue("@id", u.id)
                 ret = cmd.ExecuteNonQuery()
@@ -188,8 +221,6 @@ Namespace DAM
             Return ret
         End Function
     End Module
-
-
 
 End Namespace
 

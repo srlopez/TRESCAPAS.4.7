@@ -18,14 +18,3 @@ C:\Users\santi\source\repos\TRESCAPAS.4.7\Dominio\obj\Debug\Dominio.vbproj.CopyC
 C:\Users\santi\source\repos\TRESCAPAS.4.7\Dominio\obj\Debug\Dominio.dll
 C:\Users\santi\source\repos\TRESCAPAS.4.7\Dominio\obj\Debug\Dominio.xml
 C:\Users\santi\source\repos\TRESCAPAS.4.7\Dominio\obj\Debug\Dominio.pdb
-C:\Users\santi\source\repos\TRESCAPAS.4.7\Dominio\bin\Debug\Microsoft.Data.Sqlite.dll
-C:\Users\santi\source\repos\TRESCAPAS.4.7\Dominio\bin\Debug\SQLitePCLRaw.core.dll
-C:\Users\santi\source\repos\TRESCAPAS.4.7\Dominio\bin\Debug\System.Memory.dll
-C:\Users\santi\source\repos\TRESCAPAS.4.7\Dominio\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\santi\source\repos\TRESCAPAS.4.7\Dominio\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\santi\source\repos\TRESCAPAS.4.7\Dominio\bin\Debug\System.Buffers.dll
-C:\Users\santi\source\repos\TRESCAPAS.4.7\Dominio\bin\Debug\Microsoft.Data.Sqlite.xml
-C:\Users\santi\source\repos\TRESCAPAS.4.7\Dominio\bin\Debug\System.Memory.xml
-C:\Users\santi\source\repos\TRESCAPAS.4.7\Dominio\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\santi\source\repos\TRESCAPAS.4.7\Dominio\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\santi\source\repos\TRESCAPAS.4.7\Dominio\bin\Debug\System.Buffers.xml

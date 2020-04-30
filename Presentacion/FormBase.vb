@@ -70,15 +70,12 @@ Public Class FormBase
                     .map = CInt(10000 * Rnd()) \ 100}
                 u.id = UseCase.CrearUsuario(u)
             End If
+            ClearForm()
         Catch ex As Exception
             Dim s = "Error:" + vbCrLf _
                 + ex.Message
             MsgBox(s)
-
-        Finally
-            'ClearForm()
         End Try
-
     End Sub
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click

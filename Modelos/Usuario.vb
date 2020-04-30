@@ -9,6 +9,7 @@
     Public Sub New()
 
     End Sub
+
     Public Sub New(id As Integer,
                    nombre As String,
                    email As String,
@@ -28,8 +29,12 @@
         nombre = row("NOMBRE")
         email = row("EMAIL") + ""
         notas = row("NOTAS") + ""
-        fnac = DateTime.ParseExact(row("FNAC"), "ddMMyyyy", Nothing)
         map = row("MAP")
+        If TypeOf row("FNAC") Is Date Then
+            fnac = row("FNAC")
+        Else
+            fnac = DateTime.ParseExact(row("FNAC"), "ddMMyyyy", Nothing)
+        End If
     End Sub
 
     Public Function Clone() As Usuario
