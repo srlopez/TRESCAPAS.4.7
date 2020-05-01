@@ -53,27 +53,6 @@ Namespace My
                 Return defaultInstance
             End Get
         End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Label1")>  _
-        Public Property oo() As String
-            Get
-                Return CType(Me("oo"),String)
-            End Get
-            Set
-                Me("oo") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Label1")>  _
-        Public ReadOnly Property aa() As String
-            Get
-                Return CType(Me("aa"),String)
-            End Get
-        End Property
     End Class
 End Namespace
 
@@ -85,9 +64,9 @@ Namespace My
     Friend Module MySettingsProperty
         
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
-        Friend ReadOnly Property Settings() As Global.Access.WinForm.My.MySettings
+        Friend ReadOnly Property Settings() As Global.PresentacionUI.My.MySettings
             Get
-                Return Global.Access.WinForm.My.MySettings.Default
+                Return Global.PresentacionUI.My.MySettings.Default
             End Get
         End Property
     End Module

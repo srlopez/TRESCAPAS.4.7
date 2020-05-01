@@ -12,6 +12,8 @@ Public Class FormBase
         txtNombre.Text = ""
         txtFecha.Text = ""
         txtEmail.Text = ""
+        txtMAP.Text = ""
+        txtNotas.Text = ""
 
         lstUsuarios.Items.Clear()
         cmbSelect.Items.Clear()
@@ -34,6 +36,8 @@ Public Class FormBase
             txtNombre.Text = usuario.nombre
             txtFecha.Text = usuario.fnac '.ToString("d", DateTimeFormatInfo.InvariantInfo)
             txtEmail.Text = usuario.email
+            txtMAP.Text = usuario.map
+            txtNotas.Text = usuario.notas
 
             btnDelete.Enabled = True
 
@@ -51,23 +55,27 @@ Public Class FormBase
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Try
-            Dim expenddt As Date = Date.ParseExact(txtFecha.Text, "dd/MM/yyyy",
+            Dim fnac As Date = Date.ParseExact(txtFecha.Text, "dd/MM/yyyy",
             System.Globalization.DateTimeFormatInfo.InvariantInfo)
+            Dim map As Decimal = Decimal.Parse(txtMAP.Text).ToString("##.##")
+
 
             If txtID.Text <> "" Then
                 Dim u = usuario.Clone()
                 u.nombre = txtNombre.Text
-                u.fnac = expenddt
+                u.fnac = fnac
                 u.email = txtEmail.Text
+                u.notas = txtNotas.Text
+                u.map = map
                 UseCase.ActualizarUsuario(u)
             Else
                 Dim u = New Modelos.Usuario() With
                     {.id = -1,
                     .nombre = txtNombre.Text,
-                    .fnac = expenddt,
+                    .fnac = fnac,
                     .email = txtEmail.Text,
-                    .notas = "FRMNOTAS",
-                    .map = CInt(10000 * Rnd()) \ 100}
+                    .notas = txtNotas.Text,
+                    .map = map}
                 u.id = UseCase.CrearUsuario(u)
             End If
             ClearForm()
@@ -116,8 +124,15 @@ Public Class FormBase
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        UseCase.EliminiarUsuario(usuario)
-        ClearForm()
+        Try
+            UseCase.EliminiarUsuario(usuario)
+            ClearForm()
+        Catch ex As Exception
+            Dim s = "Error:" + vbCrLf _
+                + ex.Message
+            MsgBox(s)
+        End Try
+
     End Sub
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
@@ -160,7 +175,7 @@ Public Class FormBase
             '.Image = Access.WinForm.My.Resources.Resources.pnglogo2
             '.ImageAlign = ContentAlignment.BottomCenter
             .BackgroundImageLayout = ImageLayout.Zoom
-            .BackgroundImage = Access.WinForm.My.Resources.Resources.pnglogo2
+            .BackgroundImage = PresentacionUI.My.Resources.Resources.pnglogo2
         End With
         AddHandler myCrtl.Click, AddressOf Me.theButton_Click
         Dim myToolTip As New ToolTip
@@ -172,5 +187,6 @@ Public Class FormBase
     Private Sub FormBase_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Randomize()
     End Sub
+
 
 End Class

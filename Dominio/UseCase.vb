@@ -17,7 +17,9 @@ Public Module UseCase
     End Function
 
     Public Function ActualizarUsuario(u As Modelos.Usuario) As Integer
-        Return DAM.Usuarios.CmdUpdate(u)
+        Return IIf(Reglas.EsValido(u),
+                   DAM.Usuarios.CmdUpdate(u),
+                   -1)
     End Function
 
     Public Function ObtenerUsuarios() As DataTable

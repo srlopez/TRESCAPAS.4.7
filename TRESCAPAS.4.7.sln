@@ -10,7 +10,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1E65BA93-E5C4-419F-A465-2AF9EF1421FB}"
 	ProjectSection(SolutionItems) = preProject
 		database.accdb = database.accdb
-		database.create.sql = database.create.sql
+		database.creLite.sql = database.creLite.sql
+		database.creServer.sql = database.creServer.sql
 		database.run.bat = database.run.bat
 		database.sq3 = database.sq3
 	EndProjectSection

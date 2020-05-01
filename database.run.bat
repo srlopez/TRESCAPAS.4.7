@@ -1,1 +1,1 @@
-type database.create.sql | sqlite3 database.sq3
+type database.creLite.sql | sqlite3 database.sq3
