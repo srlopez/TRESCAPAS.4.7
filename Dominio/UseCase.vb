@@ -8,9 +8,6 @@ Public Module UseCase
         Return -1
     End Function
 
-    Public Function BorrarUsuario(u As Modelos.Usuario) As Integer
-        Return DAM.Usuarios.CmdUpdate(u)
-    End Function
 
     Public Function EliminiarUsuario(u As Modelos.Usuario) As Integer
         Return DAM.Usuarios.CmdDelete(u)

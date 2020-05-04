@@ -7,7 +7,7 @@ Imports System.Data.OleDb
 '#Const DATABASE = "SQLServer"
 '#Const DATABASE = "MSAccess"
 
-Namespace DAM
+Namespace DAM 'Data Acces Model
     Public Module DB
 #If DATABASE = "SQLite" Then
         Public Function getConnection() As SqliteConnection

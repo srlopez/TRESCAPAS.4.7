@@ -184,9 +184,5 @@ Public Class FormBase
         Return myCrtl
     End Function
 
-    Private Sub FormBase_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Randomize()
-    End Sub
-
 
 End Class
