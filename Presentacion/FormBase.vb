@@ -185,7 +185,18 @@ Public Class FormBase
     End Function
 
     Private Sub btnOtro_Click(sender As Object, e As EventArgs) Handles btnOtro.Click
-        Dim miString As String
-        Form2.ShowDialog(Me)
+
+        Dim miClass As New miReferenceClass()
+        Dim f2 As New Form2(miClass)
+
+        f2.ShowDialog()
+        Console.WriteLine($"EN FORM PRINCIPAL {miClass.miStringDePaso}")
+
     End Sub
+End Class
+
+Public Class miReferenceClass
+
+    Public miStringDePaso As String = "HOLA"
+
 End Class

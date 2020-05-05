@@ -45,9 +45,9 @@ Partial Class Form1
         Me.lbl1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.lbl1.Location = New System.Drawing.Point(37, 9)
         Me.lbl1.Name = "lbl1"
-        Me.lbl1.Size = New System.Drawing.Size(39, 13)
+        Me.lbl1.Size = New System.Drawing.Size(33, 13)
         Me.lbl1.TabIndex = 0
-        Me.lbl1.Text = "menu0"
+        Me.lbl1.Text = "menu"
         '
         'pnlBottom
         '
