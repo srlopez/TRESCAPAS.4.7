@@ -37,3 +37,5 @@ C:\Users\santi\source\repos\TRESCAPAS.4.7\Presentacion\obj\Debug\PresentacionUI.
 C:\Users\santi\source\repos\TRESCAPAS.4.7\Presentacion\obj\Debug\PresentacionUI.pdb
 C:\Users\santi\source\repos\TRESCAPAS.4.7\Presentacion\obj\Debug\PresentacionUI.FormBase.resources
 C:\Users\santi\source\repos\TRESCAPAS.4.7\Presentacion\obj\Debug\PresentacionUI.Resources.resources
+C:\Users\santi\source\repos\TRESCAPAS.4.7\Presentacion\obj\Debug\PresentacionUI.Form1.resources
+C:\Users\santi\source\repos\TRESCAPAS.4.7\Presentacion\obj\Debug\PresentacionUI.Form2.resources

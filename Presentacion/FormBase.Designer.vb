@@ -51,6 +51,7 @@ Partial Class FormBase
         Me.lblSeleccionarCmb = New System.Windows.Forms.Label()
         Me.lblSeleccionarLst = New System.Windows.Forms.Label()
         Me.lblSeleccionarGrid = New System.Windows.Forms.Label()
+        Me.btnOtro = New System.Windows.Forms.Button()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gridUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -362,11 +363,21 @@ Partial Class FormBase
         Me.lblSeleccionarGrid.TabIndex = 34
         Me.lblSeleccionarGrid.Text = "Seleccionar"
         '
+        'btnOtro
+        '
+        Me.btnOtro.Location = New System.Drawing.Point(55, 13)
+        Me.btnOtro.Name = "btnOtro"
+        Me.btnOtro.Size = New System.Drawing.Size(62, 59)
+        Me.btnOtro.TabIndex = 35
+        Me.btnOtro.Text = "Otro"
+        Me.btnOtro.UseVisualStyleBackColor = True
+        '
         'FormBase
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(986, 594)
+        Me.Controls.Add(Me.btnOtro)
         Me.Controls.Add(Me.txtNotas)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.txtNombre)
@@ -433,4 +444,5 @@ Partial Class FormBase
     Friend WithEvents lblSeleccionarCmb As Label
     Friend WithEvents lblSeleccionarLst As Label
     Friend WithEvents lblSeleccionarGrid As Label
+    Friend WithEvents btnOtro As Button
 End Class

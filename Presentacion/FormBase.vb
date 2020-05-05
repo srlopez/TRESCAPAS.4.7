@@ -184,5 +184,8 @@ Public Class FormBase
         Return myCrtl
     End Function
 
-
+    Private Sub btnOtro_Click(sender As Object, e As EventArgs) Handles btnOtro.Click
+        Dim miString As String
+        Form2.ShowDialog(Me)
+    End Sub
 End Class
